@@ -1,6 +1,4 @@
-﻿using CrackingCoding.Chapters.ArraysStrings;
-
-namespace CrackingCoding
+﻿namespace CrackingCoding
 {
     class Program
     {
@@ -8,8 +6,6 @@ namespace CrackingCoding
         {
             Console.WriteLine("Hello World");
             Console.ReadLine();
-
-            ArraysAndStringSolutions a = new ArraysAndStringSolutions();
         }
     }
 }
