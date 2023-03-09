@@ -32,8 +32,10 @@ namespace CrackingCodeTests.Chapters.ArraysStrings
             ArraysAndStringSolutions testObject = new ArraysAndStringSolutions();
 
             string compressedString = testObject.compressString(inputString);
+            string compressedStringSecond = testObject.compressStringSecond(inputString);
 
             Assert.AreEqual(expectedCompressedString, compressedString);
+            Assert.AreEqual(expectedCompressedString, compressedStringSecond);
         }
     }
 }

@@ -54,5 +54,22 @@
 
             return (inputString.Length > compressedString.Length) ? compressedString : inputString;
         }
+
+        public string compressStringSecond(string inputString)
+        {
+            string compressedString = "";
+            int count = 0;
+            for (int i = 0; i < inputString.Length; i++)
+            {
+                count++;
+                if (i + 1 >= inputString.Length || inputString[i] != inputString[i + 1])
+                {
+                    compressedString += inputString[i] + count.ToString();
+                    count = 0;
+                }
+            }
+
+            return (inputString.Length > compressedString.Length) ? compressedString : inputString;
+        }
     }
 }
