@@ -34,5 +34,25 @@
             }
             return isUniq;
         }
+
+        public string compressString(string inputString)
+        {
+            string compressedString = "";
+            int count = 1;
+            for (int i = 0; i < inputString.Length;)
+            {
+                while ((i + count) < inputString.Length && inputString[i] == inputString[i + count])
+                {
+                    count++;
+                }
+
+                compressedString += inputString[i] + count.ToString();
+
+                i += count;
+                count = 1;
+            }
+
+            return (inputString.Length > compressedString.Length) ? compressedString : inputString;
+        }
     }
 }

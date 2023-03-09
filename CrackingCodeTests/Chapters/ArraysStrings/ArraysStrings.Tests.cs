@@ -21,5 +21,19 @@ namespace CrackingCodeTests.Chapters.ArraysStrings
             Assert.AreEqual(expectedResult, output);
             Assert.AreEqual(expectedResult, output2);
         }
+
+        [DataTestMethod]
+        [DataRow("aabcccccaaa", "a2b1c5a3")]
+        [DataRow("aaabbcccddddee", "a3b2c3d4e2")]
+        [DataRow("abccdeff", "abccdeff")]
+        [DataRow("xxyyycdfaa", "xxyyycdfaa")]
+        public void compressedStringTest(string inputString, string expectedCompressedString)
+        {
+            ArraysAndStringSolutions testObject = new ArraysAndStringSolutions();
+
+            string compressedString = testObject.compressString(inputString);
+
+            Assert.AreEqual(expectedCompressedString, compressedString);
+        }
     }
 }
