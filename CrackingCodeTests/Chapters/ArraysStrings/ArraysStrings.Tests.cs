@@ -37,5 +37,23 @@ namespace CrackingCodeTests.Chapters.ArraysStrings
             Assert.AreEqual(expectedCompressedString, compressedString);
             Assert.AreEqual(expectedCompressedString, compressedStringSecond);
         }
+
+        [DataTestMethod]
+        [DataRow("furkan", "frknau", true)]
+        [DataRow("abcde", "abcdex", false)]
+        [DataRow("abcde", "abcdb", false)]
+        [DataRow("xyzabc", "xzyCba", false)]
+        [DataRow("xyzabc", "cabzyx", true)]
+        public void isPermutationTest(string first, string second, bool expectedResult)
+        {
+            ArraysAndStringSolutions testObject = new ArraysAndStringSolutions();
+
+            bool output = testObject.isPermutation(first, second);
+
+            Assert.AreEqual(expectedResult, output);
+
+        }
+
+
     }
 }
