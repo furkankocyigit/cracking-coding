@@ -71,5 +71,29 @@
 
             return (inputString.Length > compressedString.Length) ? compressedString : inputString;
         }
+
+        public bool isPermutation(string first, string second)
+        {
+            bool isPermutationOfOther = false;
+            if (first.Length != second.Length)
+            {
+                return isPermutationOfOther;
+            }
+            int count = 0;
+            for (int i = 0; i < first.Length; i++)
+            {
+                for (int j = 0; j < second.Length; j++)
+                {
+                    if (first[i] == second[j])
+                    {
+                        count++;
+                        break;
+
+                    }
+                }
+            }
+            isPermutationOfOther = count == first.Length ? true : false;
+            return isPermutationOfOther;
+        }
     }
 }
