@@ -95,5 +95,50 @@
             isPermutationOfOther = count == first.Length ? true : false;
             return isPermutationOfOther;
         }
+
+        public void zeroMatrix(int[,] matrix)
+        {
+            List<int> zeroRows = new List<int>();
+            List<int> zeroColumns = new List<int>();
+
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    if (matrix[i, j] == 0)
+                    {
+                        zeroRows.Add(i);
+                        zeroColumns.Add(j);
+                    }
+                }
+            }
+
+            nullifyRows(matrix, zeroRows);
+            nullifyColumns(matrix, zeroColumns);
+        }
+
+        private static void nullifyColumns(int[,] matrix, List<int> zeroColumns)
+        {
+            foreach (int column in zeroColumns)
+            {
+                for (int i = 0; i < matrix.GetLength(0); i++)
+                {
+                    matrix[i, column] = 0;
+
+                }
+            }
+        }
+
+        private static void nullifyRows(int[,] matrix, List<int> zeroRows)
+        {
+            foreach (int row in zeroRows)
+            {
+                for (int i = 0; i < matrix.GetLength(1); i++)
+                {
+                    matrix[row, i] = 0;
+
+                }
+            }
+        }
     }
 }

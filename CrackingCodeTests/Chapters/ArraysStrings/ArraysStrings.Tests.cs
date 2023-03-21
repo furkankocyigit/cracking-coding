@@ -54,6 +54,44 @@ namespace CrackingCodeTests.Chapters.ArraysStrings
 
         }
 
+        [TestMethod]
+        public void zeroMatrixTest()
+        {
+            int[,] matrix = new int[3, 3] { { 1, 1, 1 },
+                                            { 2, 0, 2 },
+                                            { 3, 3, 3 } };
 
+            ArraysAndStringSolutions testObject = new ArraysAndStringSolutions();
+
+            testObject.zeroMatrix(matrix);
+
+            Assert.AreEqual(0, matrix[0, 1]);
+            Assert.AreEqual(0, matrix[1, 1]);
+            Assert.AreEqual(0, matrix[2, 1]);
+            Assert.AreEqual(0, matrix[1, 0]);
+            Assert.AreEqual(0, matrix[1, 1]);
+            Assert.AreEqual(0, matrix[1, 2]);
+        }
+
+        [TestMethod]
+        public void zeroMatrixTest2()
+        {
+            int[,] matrix = new int[3, 4] { { 1, 1, 1, 1 },
+                                            { 2, 2, 2, 2 },
+                                            { 3, 3, 0 ,3}, };
+
+            ArraysAndStringSolutions testObject = new ArraysAndStringSolutions();
+
+            testObject.zeroMatrix(matrix);
+
+            Assert.AreEqual(0, matrix[0, 2]);
+            Assert.AreEqual(0, matrix[1, 2]);
+            Assert.AreEqual(0, matrix[2, 2]);
+            Assert.AreEqual(0, matrix[2, 0]);
+            Assert.AreEqual(0, matrix[2, 1]);
+            Assert.AreEqual(0, matrix[2, 2]);
+            Assert.AreEqual(0, matrix[2, 3]);
+        }
     }
+
 }
