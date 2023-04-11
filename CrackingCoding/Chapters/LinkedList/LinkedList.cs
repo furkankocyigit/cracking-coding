@@ -55,7 +55,23 @@
             }
             head = prev;
         }
+        public CustomLinkedList getInvertedList()
+        {
+            CustomLinkedList copyList = new CustomLinkedList();
+            Node current = head;
+            Node prev = null;
+            while (current != null)
+            {
+                Node node = new Node(current.data);
+                node.next = prev;
+                prev = node;
+                current = current.next;
 
+            }
+            copyList.head = prev;
+            return copyList;
+
+        }
         public int getLasthKthElement(int index)
         {
             int returnData = -99999;
@@ -141,6 +157,24 @@
             int number2 = list2.getNumberFromDigits();
 
             return number1 + number2;
+
+        }
+
+        public bool isPalindrom()
+        {
+            CustomLinkedList copyList = getInvertedList();
+            if (copyList == null) return false;
+
+            Node current1 = head;
+            Node current2 = copyList.head;
+
+            while (current1 != null)
+            {
+                if (current1.data != current2.data) return false;
+                current1 = current1.next;
+                current2 = current2.next;
+            }
+            return true;
 
         }
 

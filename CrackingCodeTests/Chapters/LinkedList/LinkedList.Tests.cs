@@ -28,6 +28,8 @@ namespace CrackingCodeTests.Chapters.LinkedList
             int data = linkedList.getLasthKthElement(lastKthIndex);
 
 
+
+
             Assert.AreEqual(expectedData, data);
             Assert.AreEqual(expectedData, data2);
         }
@@ -45,6 +47,23 @@ namespace CrackingCodeTests.Chapters.LinkedList
             int sumReverse = linkedList1.sumLinkListDigits(linkedList1, linkedList2, reverseOrder); // 321 + 4321 = 4642
             Assert.AreEqual(4642, sumReverse);
 
+        }
+
+        [DataTestMethod]
+        [DataRow(new int[] { 1, 2, 3, 4, 3, 2, 1 }, true)]
+        [DataRow(new int[] { 1, 2, 2, 1 }, true)]
+        [DataRow(new int[] { 1, 2, 3, 4, 3 }, false)]
+        public void isPalindromeTest(int[] listElements, bool expectedResult)
+        {
+            CustomLinkedList list = new CustomLinkedList();
+            foreach (int element in listElements)
+            {
+                list.Add(element);
+            }
+
+            bool palindrome = list.isPalindrom();
+
+            Assert.AreEqual(expectedResult, palindrome);
         }
 
 
